@@ -1,9 +1,3 @@
-/*
-
-Cleaning Data in SQL Queries
-
-*/
-
 Select*
 From PortfolioProject..NashvilleHousing
 
@@ -69,8 +63,7 @@ Add PropertySplitsCity varchar(255);
 Update NashvilleHousing
 SET PropertySplitCity = SUBSTRING(PropertyAddress, CHARINDEX(',', PropertyAddress) +1, Len(PropertyAddress))
 
-
-
+	
 Select *
 From PortfolioProject..NashvilleHousing
 
@@ -100,7 +93,6 @@ SET OwnerSplitState = PARSENAME(REPLACE(OwnerAddress,',', '.'), 1)
 
 --------------------------------------------------------------------------------------------------------------------------
 
-
 -- Change Y and N to Yes and No in "Sold as Vacant" field
 
 Select DISTINCT(SoldAsVacant), COUNT(SoldAsVacant)
@@ -120,7 +112,6 @@ Set SoldAsVacant = CASE When SoldAsVacant = 'Y' then 'Yes'
 						When SoldAsVacant = 'N' then 'No'
 						Else SoldAsVacant
 						END
-
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -- Remove Duplicates
