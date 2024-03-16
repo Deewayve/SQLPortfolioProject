@@ -83,12 +83,6 @@ Join PortfolioProject..CovidVaccinations vac
 Where dea.continent is not null
 Order By 2,3
 
-
-
-
-
-
-
 --Using CTE
 With PopvsVac (Continent, location, Date, Population, New_Vaccinations, RollingVaccinatedCount)
 as
@@ -105,15 +99,6 @@ Where dea.continent is not null
 )
 Select *, (RollingVaccinatedCount/Population) * 100
 From PopvsVac
-
-
-
-
-
-
-
-
-
 
 --Temp Table
 Drop Table if exists #PercentPopulationVaccinated
